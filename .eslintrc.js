@@ -27,6 +27,9 @@ module.exports = {
         "prefix": ["I"],
         "format": ["PascalCase"]
       }
+    ],
+    "prettier/prettier": ["error",{
+      "endOfLine": "auto"}
     ]
   },
 };
