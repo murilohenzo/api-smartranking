@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { PlayersController } from './controller/players.controller';
 import { FakePlayersRepository } from './repository/fake/players.fake.repository';
 import { PlayersService } from './service/players.service';
 
@@ -10,5 +11,6 @@ import { PlayersService } from './service/players.service';
       useClass: FakePlayersRepository,
     },
   ],
+  controllers: [PlayersController],
 })
 export class PlayersModule {}
