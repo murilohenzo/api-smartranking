@@ -11,13 +11,7 @@
     "outDir": "./dist",
     "baseUrl": "./src",
     "paths": {
-      "@modules": ["modules/*"],
-      "@dto": ["@modules/*/*"],
-      "@interface": ["@modules/*/*"],
-      "@schema": ["@modules/*/*"],
-      "@repository": ["@modules/*/*"],
-      "@controller": ["@modules/*/*"],
-      "@service": ["@modules/*/*"]
+      "@modules/*": ["modules/*"],
     },
     "incremental": true,
     "skipLibCheck": true,
