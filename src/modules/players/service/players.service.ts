@@ -9,7 +9,7 @@ export class PlayersService {
     @Inject('PlayersRepository') private _playersRepository: IPlayersRepository,
   ) {}
 
-  async create(player: CreatePlayerDto): Promise<IPlayer> {
-    return this._playersRepository.create(player);
+  async create(createPlayerDto: CreatePlayerDto): Promise<IPlayer> {
+    return await this._playersRepository.create(createPlayerDto);
   }
 }
