@@ -3,4 +3,5 @@ import { IPlayer } from './players.interface';
 
 export interface IPlayersRepository {
   create(createPlayerDto: CreatePlayerDto): Promise<IPlayer>;
+  findAll(): Promise<IPlayer[]>;
 }

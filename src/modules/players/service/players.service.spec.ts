@@ -20,6 +20,40 @@ describe('PlayersService', () => {
   });
 
   it('should be able created new player', async () => {
-    expect(await service.create({ name: 'John Doe' })).toHaveProperty('_id');
+    expect(
+      await service.create({
+        name: 'John Doe',
+        email: 'john@doe.com',
+        numberPhone: '551111111',
+      }),
+    ).toHaveProperty('_id');
+  });
+
+  it('should be able findAll players', async () => {
+    await service.create({
+      name: 'John Doe',
+      email: 'john@doe.com',
+      numberPhone: '551111111',
+    });
+    await service.create({
+      name: 'John Doe',
+      email: 'john@doe.com',
+      numberPhone: '551111111',
+    });
+    await service.create({
+      name: 'John Doe',
+      email: 'john@doe.com',
+      numberPhone: '551111111',
+    });
+    expect(await service.findAll()).toHaveLength(3);
+  });
+
+  it('should be not able findAll players', async () => {
+    expect.assertions(1);
+    try {
+      await service.findAll();
+    } catch (error) {
+      expect(error.message).toBe('Not existent players found.');
+    }
   });
 });

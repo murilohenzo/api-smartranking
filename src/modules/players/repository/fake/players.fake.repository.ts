@@ -28,4 +28,8 @@ export class FakePlayersRepository implements IPlayersRepository {
     this._players.push(player);
     return player;
   }
+
+  async findAll(): Promise<IPlayer[]> {
+    return this._players;
+  }
 }
